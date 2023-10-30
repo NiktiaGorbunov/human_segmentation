@@ -32,7 +32,8 @@ with mp_selfie_segmentation.SelfieSegmentation(model_selection=0) as selfie_segm
         condition = np.stack((results.segmentation_mask, ) *3, axis= -1) > 0.1
 
         # apply some background magic
-        bg_image = cv2.imread('backgrounds/1.png')  # create a virtual background
+        bg_image = cv2.imread('backgrounds/1.png')  # create a virtual background  640 х 480
+        # bg_image = cv2.imread('backgrounds/2.png')  # create a virtual background 1280 х 720
         # bg_image = cv2.GaussianBlur(image, (55, 55), 0)  # blur our background
 
         if bg_image is None:
